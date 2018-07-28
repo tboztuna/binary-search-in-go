@@ -20,19 +20,19 @@ func recursiveBinarySearch(array []int, target int, lowIndex int, highIndex int)
 	}
 }
 
-func iteratedBinarySearch(array []int, target int, lowIndex int, highIndex int) int {
+func iterativeBinarySearch(array []int, target int, lowIndex int, highIndex int) int {
 	startIndex := lowIndex
 	endIndex := highIndex
 
 	var mid int
 
-	for startIndex < endIndex {
+	for startIndex <= endIndex {
 		mid = int((startIndex + endIndex) / 2)
 
 		if array[mid] > target {
 			endIndex = mid
 		} else if array[mid] < target {
-
+			startIndex = mid + 1
 		} else {
 			return mid
 		}
